@@ -17,7 +17,9 @@
 <br>
 <br>
 
-# THE SET UP of the routers
+# THE SET UP of the routers 🌵 🌵 🌵
+
+- YOU ARE NOT GOING TO NEED ALL THIS BUT IT S GOOD FOR STARTING
 
 ```javascript
 //
@@ -92,7 +94,7 @@ export default App;
 <br>
 <br>
 
-#### CONTENT of the Hamburger.js
+#### Hamburger.js 🌵
 
 - YOU WILL NOT NEED ALL THIS later for out project
 
@@ -115,35 +117,42 @@ const Hamburger = () => {
 
       <div className="menu-layer">
         <div className="menu-city-background"></div>
-        <div className="wrapper">
-          {/* -------nav -------- */}
-          <div className="menu-links">
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/opportunities">Opportunities</Link>
-                </li>
-                <li>
-                  <Link to="/solutions">Solutions</Link>
-                </li>
-                <li>
-                  <Link to="/contact-us">Contact us</Link>
-                </li>
-              </ul>
-            </nav>
-            {/* -------nav -------- */}
-            <div className="info">
-              <h3>Our Promise.</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Corrupti, provident. Excepturi unde nostrum aut labore debitis
-                tempore consequuntur enim ea?
-              </p>
+
+        <div className="container">
+          <div className="wrapper">
+            {/* ------- -------- */}
+            <div className="menu-links">
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/opportunities">Opportunities</Link>
+                  </li>
+                  <li>
+                    <Link to="/solutions">Solutions</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact-us">Contact us</Link>
+                  </li>
+                </ul>
+              </nav>
+              <div className="info">
+                <h3>Our Promise.</h3>
+                <p>
+                  “Man is least himself when he talks in his own person. Give
+                  him a mask, and he will tell you the truth“.
+                </p>
+              </div>
+              <div className="locations">
+                Locations:
+                <span>A</span>
+                <span>B</span>
+                <span>C</span>
+              </div>
             </div>
-            {/* --- */}
-            <div className="locations">Locations:</div>
+            {/* end menu links */}
           </div>
         </div>
+        {/* end container */}
       </div>
     </div>
   );
@@ -154,8 +163,11 @@ export default Hamburger;
 
 <br>
 <br>
+<br>
 
-#### Content of the Header.js
+### Header.js 🌵
+
+- YOU WILL NOT NEED ALL THIS later for out project
 
 ```javascript
 import React from "react";
@@ -198,3 +210,149 @@ export default Header;
 ### How it should look on the Browser
 
 [<img src="./src/images/default-setup.gif"/>]()
+
+<br>
+<br>
+<br>
+
+## THE STYLES 🌟
+
+##### KEEP IN MIND that due to the fact we will be using the the SKEW SCROLL, the setting in the scss are not going to be the same specially if the container has a fixed height or width, which the skew scroll HASN'T
+
+<br>
+
+#### This isn't responsive, the container is the base template for the whole page, this is why you should think how you are going to adapt it to the SKEW SCROLL since the scroll setup isnt fixed. ⚠️
+
+```scss
+.container {
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
+  .wrapper {
+    padding: 0 48px;
+    // The .home is wrapping the routers and can cause ISSUES
+    //  when adapting the scroll due to the flex
+    // Maybe you can add the scroll {ref} on the .home that is on the routers
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+```
+
+<br>
+
+#### Container styles
+
+```scss
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: lemonchiffon;
+}
+
+//
+// -------------------
+//        Container
+// -------------------
+
+/*
+This isnt responsive, the container is the base template
+for the whole page, that is why you should think how you
+are going to adapt it to the SKEW SCROLL since the scroll setup
+isnt fixed
+
+.container {
+  width: 1280px;
+  min-width: 1280px;
+
+
+So if you want the header to dropdown with a 100vw and
+100vh you will have to set up individual settings for each
+page ,as if you add the scrolling skew on the container its going
+to be messy
+
+
+*/
+
+.container {
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
+  .wrapper {
+    padding: 0 48px;
+    // The .home is wrapping the routers and can cause ISSUES
+    //  when adapting the scroll due to the flex
+    // Maybe you can add the scroll {ref} on the .home that is on the routers
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      p {
+        font-size: 0.75rem;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+        // the font family is inside the body, here you make it slightly fatter
+        font-weight: 500;
+      }
+      h5 {
+        margin-top: 260px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-right: 360px;
+      }
+    }
+  }
+}
+// ------- end container
+```
+
+[<img src="./src/images/default-setup-container-styles.gif"/>]()
+
+<br>
+<br>
+
+#### Header Styles
+
+```scss
+//
+// -------------------
+//        Header
+// -------------------
+//
+header {
+  height: 100px;
+  .inner-header {
+    position: relative;
+    z-index: 10;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo a {
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #282828;
+    }
+    .menu {
+      button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0.8rem;
+        mix-blend-mode: difference;
+      }
+    }
+  }
+```
