@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { withRouter, Link } from "react-router-dom";
 
 import Hamburger from "./Hamburger";
 // type: sfc snippet: const  = () => {
 //
 //1
-const Header = () => {
+const Header = ({ history }) => {
+  //STATE FOR Menu withRouter related
+
+  //
+  //
   //
   //2
   const [state, setState] = useState({
@@ -15,12 +19,24 @@ const Header = () => {
     menuName: "Menu",
   });
   //
+  //
+  //STATE FOR disabled Button
   // 5 create a second useSate ,to prevent spam when opening and closing the menu
   //
   const [disabled, setDisabled] = useState(false);
 
   //
-  //
+  // USEEFFECT for page change ------
+  //   this is related to the issue page change after the animation worked
+  useEffect(() => {
+    // Listen for page changes, after you add the code
+    //  with the function below, add this:
+    //
+    history.listen(() => {
+      setState({ clicked: false, menuName: "Menu" });
+    });
+  });
+
   //
   //
   // 3 this function is related to the event on click of the button menu, it will handle the state on change in step 2
@@ -87,7 +103,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
 // withRouter will give access to the history PROP
 // with the history we will be able to determine if the URL has been changed, so
 // if it s change we will execute a certain command
