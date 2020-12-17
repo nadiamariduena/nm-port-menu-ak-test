@@ -8,8 +8,9 @@ const Header = () => {
 
   return (
     <header>
-      <div className="container">
-        <div className="wrapper">
+      <div className="nav_container">
+        <div className="nav_wrapper">
+          {/* the inner header is the 100px box where the logo and the menu button are situated */}
           <div className="inner-header">
             <div className="logo">
               <Link to="/">HANBRG</Link>

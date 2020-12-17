@@ -9,14 +9,10 @@ const Hamburger = () => {
   // JSX DATA
   return (
     <div className="hamburger-menu">
-      <div className="menu-secondary-background-color"></div>
-
-      <div className="menu-layer">
-        <div className="menu-city-background"></div>
-
-        <div className="container">
-          <div className="wrapper">
-            {/* ------- -------- */}
+      <div className="nav_menu-layer">
+        <div className="nav_container">
+          <div className="nav_wrapper">
+            {/* ------- nav open -------- */}
             <div className="menu-links">
               <nav>
                 <ul>
@@ -31,6 +27,7 @@ const Hamburger = () => {
                   </li>
                 </ul>
               </nav>
+              {/* the info we dont need */}
               <div className="info">
                 <h3>Our Promise.</h3>
                 <p>
@@ -38,6 +35,7 @@ const Hamburger = () => {
                   him a mask, and he will tell you the truth“.
                 </p>
               </div>
+              {/* the info we dont need */}
               <div className="locations">
                 Locations:
                 <span>A</span>
@@ -45,7 +43,7 @@ const Hamburger = () => {
                 <span>C</span>
               </div>
             </div>
-            {/* end menu links */}
+            {/* ------- nav open -------- */}
           </div>
         </div>
         {/* end container */}

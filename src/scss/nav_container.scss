@@ -1,45 +1,9 @@
-@import "nav_container";
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-body {
-  background-color: lemonchiffon;
-}
-//
-//
-// -------------------
-//        Container
-// -------------------
-
-/*
-This isnt responsive, the container is the base template
-for the whole page, that is why you should think how you
-are going to adapt it to the SKEW SCROLL since the scroll setup
-isnt fixed
-
-.container {
-  width: 1280px;
-  min-width: 1280px;
-
-
-So if you want the header to dropdown with a 100vw and 
-100vh you will have to set up individual settings for each 
-page ,as if you add the scrolling skew on the container its going
-to be messy
-
-
-*/
-.container {
-  width: 1280px;
-  min-width: 1280px;
+.nav_container {
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
-  .wrapper {
+  // here was green
+  .nav_wrapper {
     padding: 0 48px;
     // The .home is wrapping the routers and can cause ISSUES
     //  when adapting the scroll due to the flex
@@ -67,45 +31,43 @@ to be messy
   }
 }
 
-//
-//
 // -------------------
 //        Header
 // -------------------
 //
 
 header {
-  height: 100px;
-  .inner-header {
-    //   z-index DO NOT WORK unless you define a position
-    // So if you dont define a position relative / absolute /fixed they dont know to what the z-index have to be relative to.
-    position: relative;
-    z-index: 10;
-    // background-color: green;
-    border: 1px solid #000;
-    //
-    //
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .logo a {
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      color: #282828;
-    }
-    .menu {
-      button {
-        border: none;
-        background: none;
-        outline: none;
-        cursor: pointer;
-        font-size: 0.8rem;
-        mix-blend-mode: difference;
-      }
-    }
-  }
+  // height: 100px;
+  // .inner-header {
+  //   z-index DO NOT WORK unless you define a position
+  // So if you dont define a position relative / absolute /fixed they dont know to what the z-index have to be relative to.
+  //   position: relative;
+  //   z-index: 10;
+  //   // background-color: green;
+  //   border: 1px solid #000;
+  //   //
+  //   //
+  //   height: 100px;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   .logo a {
+  //     font-weight: 700;
+  //     font-size: 1rem;
+  //     text-decoration: none;
+  //     color: #282828;
+  //   }
+  //   .menu {
+  //     button {
+  //       border: none;
+  //       background: none;
+  //       outline: none;
+  //       cursor: pointer;
+  //       font-size: 0.8rem;
+  //       mix-blend-mode: difference;
+  //     }
+  //   }
+  // }
 
   //   -------------------
   //          Hamburger
@@ -120,47 +82,24 @@ header {
     position: fixed;
     height: 100%;
     width: 100%;
-    // THIS ONE WE WILL REMOVE in the future
-    .menu-secondary-background-color {
-      background: #282828;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-    }
+
     //
     //-------------
     //  .menu-layer  is the .nav.open in the old dropdown menu
     //-------------
     //
-    .menu-layer {
+    .nav_menu-layer {
       position: relative;
-      background: red;
+      //   box-decoration-break: 1px solid green;
+      background-color: red;
       height: 100%;
       overflow: hidden;
       //   we dont need this either
-      .menu-city-background {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        background-size: cover;
-        background-repeat: no-repeat;
-        animation-name: backgroundEffect;
-        animation-duration: 30s;
-        animation-iteration-count: infinite;
-      }
-      .wrapper {
-        position: relative;
+
+      .nav_wrapper {
+        position: relative; //relative to the nav_container
         //
+
         //-------------
         //  .menu-layer  is the .nav.open in the old dropdown menu
         //-------------

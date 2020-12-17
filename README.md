@@ -321,7 +321,13 @@ to be messy
 <br>
 <br>
 
-#### Header Styles
+#### Header Styles 🌵
+
+<br>
+
+- z-index DO NOT WORK unless you define a position
+
+- With the code Below, the links will not work anymore, and that is because we are missing the absolute part to connect with the relative, so to make use of the z-index.
 
 ```scss
 //
@@ -332,8 +338,12 @@ to be messy
 header {
   height: 100px;
   .inner-header {
+    //   z-index DO NOT WORK unless you define a position
+    // So if you dont define a position relative / absolute they dont know to what the z-index have to be relative to.
     position: relative;
     z-index: 10;
+    //
+    //
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -355,4 +365,53 @@ header {
       }
     }
   }
+}
 ```
+
+##### The missing part
+
+```scss
+//
+// -------------------
+//        Header
+// -------------------
+//
+header {
+  height: 100px;
+  .inner-header {
+    //   z-index DO NOT WORK unless you define a position
+    // So if you dont define a position relative / absolute they dont know to what the z-index have to be relative to.
+    position: relative;
+    z-index: 10;
+    //
+    //
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo a {
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #282828;
+    }
+    .menu {
+      button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0.8rem;
+        mix-blend-mode: difference;
+      }
+    }
+  }
+}
+```
+
+[<img src="./src/images/default-setup-header-styles.gif"/>]()
+
+<br>
+<br>
+
+### SET UP A CONTAINER-SKEW with a scroll , i think with a container skew , the other container settings can stay as they are
