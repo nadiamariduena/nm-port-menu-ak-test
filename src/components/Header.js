@@ -61,7 +61,7 @@ const Header = () => {
     setDisabled(!disabled);
     setTimeout(() => {
       setDisabled(false);
-    }, 1200); //we want this to run every 12 hundred milisecs
+    }, 500); //we want this to run every 12 hundred milisecs
   }; //
   //
   return (

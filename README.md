@@ -565,6 +565,110 @@ const Hamburger = ({ state }) => {
   //   the reason for the state fuunction not defined was due to the fact i forgot to make the connection inside the header here:    <Hamburger state={state} />
   useEffect(() => {
     if (state.clicked === false) {
+      // step4
+      // if its not clicked ,HIDE the dropdown
+      menu.style.display = "none";
+    } else if (
+      state.clicked === true ||
+      (state.clicked === true && state.initial === null)
+    ) {
+      // step5
+      // if its clicked ,SHOW the dropdown
+      menu.style.display = "flex";
+    }
+  });
+  //
+  //
+
+  // -------------------
+  // JSX DATA
+  return (
+    //   connected to step 3 . 4/5 for example: menu.style.display = "flex";
+    <div ref={(el) => (menu = el)} className="hamburger-menu">
+      <div className="nav_menu-layer">
+
+```
+
+<br>
+<br>
+
+## THE ERROR ⚠️
+
+```javascript
+TypeError: Cannot read property 'clicked' of undefined
+(anonymous function)
+src/components/Hamburger.js:24
+  21 |   //   uef snippet to create a useEffect
+  22 | //   the reason for the state fuunction not defined was due to the fact i forgot to make the connection inside the header here:    <Hamburger state={state} />
+  23 |   useEffect(() => {
+> 24 |     if (state.clicked === false) {
+  25 |       menu.style.display = "none";
+  26 |     } else if (
+  27 |       state.clicked === true ||
+```
+
+##### the reason for that error in the code below :
+
+```javascript
+useEffect(() => {
+  if (state.clicked === false) {
+    // if its not clicked ,HIDE the dropdown
+    menu.style.display = "none"; //this is the basic, as it s going to be relaced by GSAP
+  } else if (
+    state.clicked === true ||
+    (state.clicked === true && state.initial === null)
+  ) {
+    // if its clicked ,SHOW the dropdown
+    menu.style.display = "block"; //this is the basic, as it s going to be relaced by GSAP
+  }
+});
+```
+
+##### is that i forgot to make the connection with the header.js , i certainly did INITIALIZE the {state} here:
+
+```javascript
+// Hamburger.js
+const Hamburger = ({ state }) => {
+```
+
+##### BUT i forgot to add it here inside the Header.js
+
+```javascript
+// Header.js
+<Hamburger state={state} />
+```
+
+[ <img src="./src/images/Animated-dropdown.gif"/>]()
+
+<br>
+
+#### THE HAMBURGER.JS
+
+```javascript
+import React, { useEffect, useRef } from "react";
+// the useRef will gives us access to the hamburger-menu in the DOM
+import { Link } from "react-router-dom";
+
+//
+//
+// 1
+// type: sfc snippet: const  = () => {
+const Hamburger = ({ state }) => {
+  // Here is how you access the state in the menuTwo.js :
+  // const Hamburger = ({ state }) => {
+  //
+  //
+  // 3
+  let menu = useRef(null);
+
+  //
+  //
+  //
+  // 2     create the useEffect to access the states inside the MenuTwo.js
+  //   uef snippet to create a useEffect
+  //   the reason for the state fuunction not defined was due to the fact i forgot to make the connection inside the header here:    <Hamburger state={state} />
+  useEffect(() => {
+    if (state.clicked === false) {
       // if its not clicked ,HIDE the dropdown
       menu.style.display = "none";
     } else if (
@@ -627,54 +731,3 @@ const Hamburger = ({ state }) => {
 
 export default Hamburger;
 ```
-
-<br>
-<br>
-
-## THE ERROR ⚠️
-
-```javascript
-TypeError: Cannot read property 'clicked' of undefined
-(anonymous function)
-src/components/Hamburger.js:24
-  21 |   //   uef snippet to create a useEffect
-  22 | //   the reason for the state fuunction not defined was due to the fact i forgot to make the connection inside the header here:    <Hamburger state={state} />
-  23 |   useEffect(() => {
-> 24 |     if (state.clicked === false) {
-  25 |       menu.style.display = "none";
-  26 |     } else if (
-  27 |       state.clicked === true ||
-```
-
-##### the reason for that error in the code below :
-
-```javascript
-useEffect(() => {
-  if (state.clicked === false) {
-    // if its not clicked ,HIDE the dropdown
-    menu.style.display = "none";
-  } else if (
-    state.clicked === true ||
-    (state.clicked === true && state.initial === null)
-  ) {
-    // if its clicked ,SHOW the dropdown
-    menu.style.display = "flex";
-  }
-});
-```
-
-##### is that i forgot to make the connection with the header.js , i certainly did INITIALIZE the {state} here:
-
-```javascript
-// Hamburger.js
-const Hamburger = ({ state }) => {
-```
-
-##### BUT i forgot to add it here inside the Header.js
-
-```javascript
-// Header.js
-<Hamburger state={state} />
-```
-
-[ <img src="./src/images/Animated-dropdown.gif"/>]()
