@@ -76,13 +76,13 @@ const Header = () => {
             {/* ---------- */}
             <div className="menu">
               <button disabled={disabled} onClick={handleMenu}>
-                Menu
+                {state.menuName}
               </button>
             </div>
           </div>
         </div>
       </div>
-      <Hamburger />
+      <Hamburger state={state} />
     </header>
   );
 };

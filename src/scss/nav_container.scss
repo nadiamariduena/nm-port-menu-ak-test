@@ -74,7 +74,7 @@ header {
   //   -------------------
 
   .hamburger-menu {
-    display: flex; //you can replace it with display just to see what you have
+    display: none; //you can replace it with display just to see what you have
     z-index: 9; //it means it will be under the green box of the .inner-header {  since  the .inner-header has a z-index: 10;
     top: 0;
     left: 0;

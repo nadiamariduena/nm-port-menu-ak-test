@@ -1,24 +1,44 @@
-import React from "react";
-// import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+// the useRef will gives us access to the hamburger-menu in the DOM
 import { Link } from "react-router-dom";
-// import gsap from "gsap";
+
 //
 //
+// 1
+// type: sfc snippet: const  = () => {
+const Hamburger = ({ state }) => {
+  // Here is how you access the state in the menuTwo.js :
+  // const Hamburger = ({ state }) => {
+  //
+  //
+  // 3
+  let menu = useRef(null);
 
-const Hamburger = () => {
+  //
+  //
+  //
+  // 2     create the useEffect to access the states inside the MenuTwo.js
+  //   uef snippet to create a useEffect
+  //   the reason for the state fuunction not defined was due to the fact i forgot to make the connection inside the header here:    <Hamburger state={state} />
+  useEffect(() => {
+    if (state.clicked === false) {
+      // if its not clicked ,HIDE the dropdown
+      menu.style.display = "none";
+    } else if (
+      state.clicked === true ||
+      (state.clicked === true && state.initial === null)
+    ) {
+      // if its clicked ,SHOW the dropdown
+      menu.style.display = "flex";
+    }
+  });
+  //
+  //
 
-
-
-
-
-
-
-
-
-    // -------------------
+  // -------------------
   // JSX DATA
   return (
-    <div className="hamburger-menu">
+    <div ref={(el) => (menu = el)} className="hamburger-menu">
       <div className="nav_menu-layer">
         <div className="nav_container">
           <div className="nav_wrapper">
