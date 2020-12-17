@@ -25,6 +25,7 @@ function App() {
 }
 
 function Opportunities() {
+  // you can import the content component of this page "Opportunities"
   return <p>Discover our numerous opportunities</p>;
 }
 
@@ -50,3 +51,5 @@ function Home() {
   );
 }
 export default App;
+
+
