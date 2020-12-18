@@ -707,3 +707,10 @@ useEffect(() => {
   // JSX DATA
   return (
 ```
+
+<br>
+<br>
+
+#### Little result (not yet completed)
+
+[ <img src="../../src/images/firststep_gsap-anim.gif"/>]()
