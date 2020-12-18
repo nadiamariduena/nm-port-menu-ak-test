@@ -87,7 +87,7 @@ const Header = ({ history }) => {
           {/* the inner header is the 100px box where the logo and the menu button are situated */}
           <div className="inner-header">
             <div className="logo">
-              <Link to="/">HANBRG</Link>
+              <Link to="/">TESTING</Link>
             </div>
             {/* ---------- */}
             <div className="menu">

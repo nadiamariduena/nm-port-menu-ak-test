@@ -37,37 +37,37 @@
 //
 
 header {
-  // height: 100px;
-  // .inner-header {
-  //   z-index DO NOT WORK unless you define a position
-  // So if you dont define a position relative / absolute /fixed they dont know to what the z-index have to be relative to.
-  //   position: relative;
-  //   z-index: 10;
-  //   // background-color: green;
-  //   border: 1px solid #000;
-  //   //
-  //   //
-  //   height: 100px;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   .logo a {
-  //     font-weight: 700;
-  //     font-size: 1rem;
-  //     text-decoration: none;
-  //     color: #282828;
-  //   }
-  //   .menu {
-  //     button {
-  //       border: none;
-  //       background: none;
-  //       outline: none;
-  //       cursor: pointer;
-  //       font-size: 0.8rem;
-  //       mix-blend-mode: difference;
-  //     }
-  //   }
-  // }
+  height: 100px;
+  .inner-header {
+    //   z-index DO NOT WORK unless you define a position
+    // So if you dont define a position relative / absolute /fixed they dont know to what the z-index have to be relative to.
+    position: relative;
+    z-index: 10;
+    // background-color: green;
+    // border: 1px solid #000;
+    //
+    //
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo a {
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #282828;
+    }
+    .menu {
+      button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0.8rem;
+        mix-blend-mode: difference;
+      }
+    }
+  }
 
   //   -------------------
   //          Hamburger

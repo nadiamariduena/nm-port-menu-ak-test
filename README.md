@@ -795,6 +795,7 @@ This error occurred during the build time and cannot be dismissed.
 - ADD THE {history} related to the function history.listen(() => {
 
 ```javascript
+// Header.js
 const Header = ({ history }) => {
 ```
 
@@ -914,3 +915,10 @@ export default withRouter(Header);
 // with the history we will be able to determine if the URL has been changed, so
 // if it s change we will execute a certain command
 ```
+
+<br>
+<br>
+
+[]()
+
+[ <img src="./src/images/menu-working-but-without-dropdown-effect.gif"/>]()
