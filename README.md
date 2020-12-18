@@ -72,8 +72,8 @@
 
 ##### DROPDOWN ANIMATION (skew)
 
-[ <img src="./src/images/firststep_gsap-anim.gif"/>]()
+[ <img src="./src/images/firststep_gsap-anim.gif"/>](src/docs/SECONDMENU-PROCESS.md)
 
 ##### TEXT ANIMATION
 
-[ <img src="./src/images//second-step_gsap-anim.gif"/>]()
+[ <img src="./src/images//second-step_gsap-anim.gif"/>](src/docs/SECONDMENU-PROCESS.md)
