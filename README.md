@@ -66,6 +66,14 @@
 
 <br>
 
-##### THE PROCESS
+### THE PROCESS
 
 [The process ](src/docs/SECONDMENU-PROCESS.md)
+
+##### DROPDOWN ANIMATION (skew)
+
+[ <img src="./src/images/firststep_gsap-anim.gif"/>]()
+
+##### TEXT ANIMATION
+
+[ <img src="./src/images//second-step_gsap-anim.gif"/>]()
