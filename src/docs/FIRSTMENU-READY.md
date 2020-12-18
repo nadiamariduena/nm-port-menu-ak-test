@@ -486,3 +486,87 @@ header {
   //    end hamburger menu
 }
 ```
+
+<br>
+<br>
+<br>
+<br>
+
+# 🌵 🏜️ 🌵
+
+#### This main.scss will be changed as the Sstructure inside the portfolio "nm" isnt the same due to the "SCROLL" animation.
+
+- FOR EXAMPLE, in the .container the width and the height is fixed
+
+<br>
+
+```scss
+@import "nav_container";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: lemonchiffon;
+}
+//
+//
+// -------------------
+//        Container
+// -------------------
+
+/*
+This isnt responsive, the container is the base template
+for the whole page, that is why you should think how you
+are going to adapt it to the SKEW SCROLL since the scroll setup
+isnt fixed
+
+.container {
+  width: 1280px;
+  min-width: 1280px;
+
+
+So if you want the header to dropdown with a 100vw and 
+100vh you will have to set up individual settings for each 
+page ,as if you add the scrolling skew on the container its going
+to be messy
+
+
+*/
+.container {
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
+  .wrapper {
+    padding: 0 48px;
+    // The .home is wrapping the routers and can cause ISSUES
+    //  when adapting the scroll due to the flex
+    // Maybe you can add the scroll {ref} on the .home that is on the routers
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      p {
+        font-size: 0.75rem;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+        // the font family is inside the body, here you make it slightly fatter
+        font-weight: 500;
+      }
+      h5 {
+        margin-top: 260px;
+        font-size: 24px;
+        font-weight: 600;
+        padding-right: 360px;
+      }
+    }
+  }
+}
+```

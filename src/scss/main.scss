@@ -1,4 +1,5 @@
 @import "nav_container";
+@import "fonts";
 
 html,
 body {
@@ -9,7 +10,8 @@ body {
 }
 
 body {
-  background-color: lemonchiffon;
+  overflow-x: hidden;
+  background-color: rgb(236, 179, 114);
 }
 //
 //
@@ -17,28 +19,11 @@ body {
 //        Container
 // -------------------
 
-/*
-This isnt responsive, the container is the base template
-for the whole page, that is why you should think how you
-are going to adapt it to the SKEW SCROLL since the scroll setup
-isnt fixed
-
-.container {
-  width: 1280px;
-  min-width: 1280px;
-
-
-So if you want the header to dropdown with a 100vw and 
-100vh you will have to set up individual settings for each 
-page ,as if you add the scrolling skew on the container its going
-to be messy
-
-
-*/
 .container {
   width: 1280px;
   min-width: 1280px;
   margin: 0 auto;
+  background-color: green;
   .wrapper {
     padding: 0 48px;
     // The .home is wrapping the routers and can cause ISSUES
@@ -67,182 +52,12 @@ to be messy
   }
 }
 
-//
-//
-// -------------------
-//        Header
-// -------------------
-//
-
-header {
-  height: 100px;
-  // .inner-header {
-  //   //   z-index DO NOT WORK unless you define a position
-  //   // So if you dont define a position relative / absolute /fixed they dont know to what the z-index have to be relative to.
-  //   position: relative;
-  //   z-index: 10;
-  //   // background-color: green;
-  //   border: 1px solid #000;
-  //   //
-  //   //
-  //   height: 100px;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   .logo a {
-  //     font-weight: 700;
-  //     font-size: 1rem;
-  //     text-decoration: none;
-  //     color: #282828;
-  //   }
-  //   .menu {
-  //     button {
-  //       border: none;
-  //       background: none;
-  //       outline: none;
-  //       cursor: pointer;
-  //       font-size: 0.8rem;
-  //       mix-blend-mode: difference;
-  //     }
-  //   }
-  // }
-
-  //   -------------------
-  //          Hamburger
-  //   -------------------
-
-  .hamburger-menu {
-    display: flex; //you can replace it with display just to see what you have
-    z-index: 9; //it means it will be under the green box of the .inner-header {  since  the .inner-header has a z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    height: 100%;
+.home-content {
+  background-color: fuchsia;
+  width: 100vw;
+  height: 90vh;
+  .home-content-top {
     width: 100%;
-    // THIS ONE WE WILL REMOVE in the future
-    .menu-secondary-background-color {
-      background: #282828;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-    }
-    //
-    //-------------
-    //  .menu-layer  is the .nav.open in the old dropdown menu
-    //-------------
-    //
-    .menu-layer {
-      position: relative;
-      background: red;
-      height: 100%;
-      overflow: hidden;
-      //   we dont need this either
-      .menu-city-background {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        background-size: cover;
-        background-repeat: no-repeat;
-        animation-name: backgroundEffect;
-        animation-duration: 30s;
-        animation-iteration-count: infinite;
-      }
-      .wrapper {
-        position: relative;
-        //
-        //-------------
-        //  .menu-layer  is the .nav.open in the old dropdown menu
-        //-------------
-        //
-        .menu-links {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          position: relative;
-          top: 200px;
-          nav {
-            display: block;
-            ul {
-              margin: 0;
-              padding: 0;
-              li {
-                list-style: none;
-                font-size: 6rem;
-                font-weight: 700;
-                cursor: pointer;
-                height: 135px;
-                overflow: hidden;
-                position: relative;
-                width: 700px;
-                a {
-                  position: absolute;
-                  color: #fff;
-                  text-decoration: none;
-                  &:hover {
-                    color: #282828;
-                  }
-                }
-              }
-            }
-          }
-          //   this we also dont need
-          .info {
-            color: #fff;
-            width: 300px;
-            h3 {
-              font-size: 1.2rem;
-              margin: 8px auto;
-            }
-            p {
-              margin: 0 auto;
-              font-size: 0.8rem;
-            }
-          }
-        }
-        // this we dont need but maybe we can fin a replacement
-        .locations {
-          position: absolute;
-          bottom: -80px;
-          color: #fff;
-          margin-top: 16px;
-          font-size: 0.8rem;
-          font-weight: 600;
-          span {
-            cursor: pointer;
-            &:first-child {
-              margin-left: 64px;
-            }
-            font-weight: 400;
-            margin: 0 32px;
-            transition: 0.3s ease-in-out;
-            &:hover {
-              color: #fff;
-              background: #282828;
-              padding: 8px 24px;
-              border-radius: 4px;
-            }
-          }
-        }
-        //-**
-      }
-    }
-    //
-    //-------------
-    //  .menu-layer  end
-    //-------------
-    //
+    height: 100%;
   }
-
-  //    end hamburger menu
 }

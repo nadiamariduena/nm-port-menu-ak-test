@@ -29,7 +29,7 @@ const Hamburger = ({ state }) => {
       (state.clicked === true && state.initial === null)
     ) {
       // if its clicked ,SHOW the dropdown
-      menu.style.display = "flex";
+      menu.style.display = "block";
     }
   });
   //
@@ -40,43 +40,40 @@ const Hamburger = ({ state }) => {
   return (
     <div ref={(el) => (menu = el)} className="hamburger-menu">
       <div className="nav_menu-layer">
-        <div className="nav_container">
-          <div className="nav_wrapper">
-            {/* ------- nav open -------- */}
-            <div className="menu-links">
-              <nav>
-                <ul>
-                  <li>
-                    <Link to="/opportunities">Opportunities</Link>
-                  </li>
-                  <li>
-                    <Link to="/solutions">Solutions</Link>
-                  </li>
-                  <li>
-                    <Link to="/contact-us">Contact us</Link>
-                  </li>
-                </ul>
-              </nav>
-              {/* the info we dont need */}
-              <div className="info">
-                <h3>Our Promise.</h3>
-                <p>
-                  “Man is least himself when he talks in his own person. Give
-                  him a mask, and he will tell you the truth“.
-                </p>
-              </div>
-              {/* the info we dont need */}
-              <div className="locations">
-                Locations:
-                <span>A</span>
-                <span>B</span>
-                <span>C</span>
-              </div>
+        <div className="nav_menu-layer-wrapper">
+          {/* ------- nav open -------- */}
+          <div className="menu-links">
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/opportunities">Opportunities</Link>
+                </li>
+                <li>
+                  <Link to="/solutions">Solutions</Link>
+                </li>
+                <li>
+                  <Link to="/contact-us">Contact us</Link>
+                </li>
+              </ul>
+            </nav>
+            {/* the info we dont need */}
+            <div className="info">
+              <h3>Our Promise.</h3>
+              <p>
+                “Man is least himself when he talks in his own person. Give him
+                a mask, and he will tell you the truth“.
+              </p>
             </div>
-            {/* ------- nav open -------- */}
+            {/* the info we dont need */}
+            <div className="locations">
+              Locations:
+              <span>A</span>
+              <span>B</span>
+              <span>C</span>
+            </div>
           </div>
+          {/* ------- nav open -------- */}
         </div>
-        {/* end container */}
       </div>
     </div>
   );

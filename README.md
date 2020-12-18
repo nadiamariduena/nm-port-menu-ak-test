@@ -1,7 +1,29 @@
 # TESTING THE WRONG AKRAM "dropdown" MENU FROM 0 🌵
 
-##### YESTERDAY i tried to add it directly to the nm portofolio i ve been working on, and it didn't work because it was to complicated to do it with so much data related to the scrolling effect on the page So i started it from scratch
+###### I REPEATED THIS MENU TUTORIAL OUT OF FRUSTRATION WITH THE ONE I ADDED TO THIS FIRST PROJECT, THE OLD MENU CERTAINLY WORKS IN LOCAL BUT DONT REACT AT ALL WHEN DEPLOYING TO ftp filezilla.
 
+[nav hash issue, svg diving with menu ](https://github.com/nadiamariduena/nadiamariduena-portfolio-with-react-createapp)
+
+<br>
+
+[Beginning of the nm portfolio | 3D three.js animations, perspective 3d animation etc ](https://github.com/nadiamariduena/nadiamariduena-portfolio)
+
+<br>
+
+[ <img src="./src/images/distortedanimation.gif"/>]()
+
+<br>
+<br>
+
+###### SO INSTEAD OF COMPLICATING THE CODE "due to the scroll effect animation clash" I DECIDED TO REPEAT IT IN A CLEAN TEMPLATE.
+
+###### BY RECREATING I SOLVED ANOTHER ISSUE THAT WAS RELATED TO THE "hash" ISSUE WHEN DEPLOYING TO FILEZILLA
+
+<br>
+
+<br>
+<br>
+<hr>
 <br>
 
 #### START by Installing the dependencies 👷‍♂️
