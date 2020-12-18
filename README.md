@@ -61,3 +61,11 @@
 <br>
 <hr>
 <br>
+
+# THE GSAP ANIMATION PHASE 🌵 🌵 🌵
+
+<br>
+
+##### THE PROCESS
+
+[The process ](src/docs/SECONDMENU-PROCESS.md)
