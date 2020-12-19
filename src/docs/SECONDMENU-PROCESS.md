@@ -902,3 +902,82 @@ export default Hamburger;
 <br>
 
 [ <img src="../../src/images//second-step_gsap-anim.gif"/>]()
+
+<br>
+<br>
+<br>
+
+## SET UP OF THE BOUNCING EFFECT ON THE TEXT (3 lines) 🏜️
+
+- THIS 2 functions will animate the 3 texts inside the nav open
+- it will animate it different , giving to eat a bit of skew in more of the reaveal effect
+
+```javascript
+// BOUNCING TEXT EFFECT
+const handleHoverBouncer = (e) => {
+  gsap.to(e.target, {
+    duration: 0.3,
+    y: 3,
+    skewX: 4,
+    ease: "power3.inOut",
+  });
+};
+const handleHoverBouncerExit = () => {
+  gsap.to(e.target, {
+    duration: 0.3,
+    y: -3,
+    skewX: 0,
+    ease: "power3.inOut",
+  });
+};
+```
+
+<br>
+
+##### WITH THIS I WILL MAKE THE CONNECTION TO THE FUNCTION I JUST CREATED
+
+```javascript
+    onMouseEnter={(e) => handleHoverBouncer(e)}
+    onMouseOut={(e) => handleHoverBouncerExit(e)}
+```
+
+##### NOW ADD IT TO THE "Link" ROUTES that you want to animate
+
+```javascript
+<nav>
+  <ul>
+    <li>
+      <Link
+        onMouseEnter={(e) => handleHoverBouncer(e)}
+        onMouseOut={(e) => handleHoverBouncerExit(e)}
+        ref={(el) => (line1 = el)}
+        to="/opportunities"
+      >
+        Opportunities
+      </Link>
+    </li>
+    <li>
+      <Link
+        onMouseEnter={(e) => handleHoverBouncer(e)}
+        onMouseOut={(e) => handleHoverBouncerExit(e)}
+        ref={(el) => (line2 = el)}
+        to="/solutions"
+      >
+        Solutions
+      </Link>
+    </li>
+    <li>
+      <Link
+        onMouseEnter={(e) => handleHoverBouncer(e)}
+        onMouseOut={(e) => handleHoverBouncerExit(e)}
+        ref={(el) => (line3 = el)}
+        to="/contact-us"
+      >
+        Contact us
+      </Link>
+    </li>
+  </ul>
+</nav>
+```
+
+[<img src="../../src/images/third-step_gsap-anim_textBoundingEffect.gif"/>]()

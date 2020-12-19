@@ -17,6 +17,7 @@ const Header = ({ history }) => {
     initial: false,
     clicked: null,
     menuName: "Menu",
+    color: false,
   });
   //
   //

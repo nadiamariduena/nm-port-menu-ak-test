@@ -32,7 +32,7 @@ body {
 .container {
   height: auto;
   margin: 0 auto;
-  background-color: green;
+
   .wrapper {
     padding: 0 48px;
     // The .home is wrapping the routers and can cause ISSUES
@@ -63,7 +63,7 @@ body {
 }
 
 .home-content {
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(14, 14, 14);
   width: 100vw;
   height: 100vh;
 
@@ -74,7 +74,7 @@ body {
     justify-content: center;
     align-items: center;
     p {
-      color: #eeedeb;
+      color: #000000;
       font-size: 0.75rem;
       letter-spacing: 0.3rem;
       text-transform: uppercase;
@@ -82,10 +82,11 @@ body {
       font-weight: 500;
     }
     h5 {
-      color: #eeedeb;
-      width: 50%;
+      color: #ebebeb;
+      width: 60%;
       margin-top: 260px;
-      font-size: 24px;
+      font-size:2em;
+      line-height: 35px;
       font-weight: 600;
       // padding-right: 360px;
     }

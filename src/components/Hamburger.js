@@ -40,12 +40,12 @@ const Hamburger = ({ state }) => {
   useEffect(() => {
     if (state.clicked === false) {
       // if its not clicked ,HIDE/CLOSE the dropdown
-      gsap.to([revealMenu], {
+      gsap.to(revealMenu, {
         duration: 0.5,
         height: 0,
         ease: "power3.inOut",
         stagger: {
-          amount: 0.05,
+          amount: 0.01,
         },
       });
       gsap.to(menu, {
@@ -67,7 +67,7 @@ const Hamburger = ({ state }) => {
         css: { display: "block" },
       });
       gsap.to([revealMenu], {
-        duration: 0,
+        duration: 0, //it will do it as soon as it s clicked
         opacity: 1,
         height: "100%",
       });
@@ -75,6 +75,7 @@ const Hamburger = ({ state }) => {
       staggerReveal(revealMenu);
       fadeInUp(info);
       staggerText(line1, line2, line3);
+
       //---------------------
     }
   }, [state]); //we need to wait the state to be finish or has change
@@ -82,7 +83,7 @@ const Hamburger = ({ state }) => {
   // skew is a bit broken when the dropdown reaches the 100%
   //
   //
-  // type: sfc snippet: const  = () => {
+  //  info
   const staggerReveal = (node1) => {
     gsap.from(node1, {
       duration: 0.8,
@@ -91,7 +92,7 @@ const Hamburger = ({ state }) => {
       skewY: 2,
       ease: "power3.inOut",
       stagger: {
-        amount: 0.1,
+        amount: 0.9,
       },
     });
   };
@@ -105,8 +106,8 @@ const Hamburger = ({ state }) => {
       delay: 0.1,
       ease: "power3.inOut",
       stagger: {
-        amount: 0.9, //each line will take a bit time to show, 
-        // if you add 0.1 it will look like all the 3 lines come 
+        amount: 0.9, //each line will take a bit time to show,
+        // if you add 0.1 it will look like all the 3 lines come
         // at the same time, that s why i dont like it
       },
     });
@@ -123,6 +124,30 @@ const Hamburger = ({ state }) => {
       ease: "power3.inOut",
     });
   };
+  //
+  //
+  //
+  // BOUNCING TEXT EFFECT
+  const handleHoverBouncer = (e) => {
+    gsap.to(e.target, {
+      duration: 0.3,
+      y: 3,
+      skewX: 4,
+      ease: "power3.inOut",
+    });
+  };
+  const handleHoverBouncerExit = (e) => {
+    gsap.to(e.target, {
+      duration: 0.3,
+      y: -3,
+      skewX: 0,
+      ease: "power3.inOut",
+    });
+  };
+
+  //
+  //
+  //
 
   // -------------------
   // JSX DATA
@@ -136,17 +161,32 @@ const Hamburger = ({ state }) => {
             <nav>
               <ul>
                 <li>
-                  <Link ref={(el) => (line1 = el)} to="/opportunities">
+                  <Link
+                    onMouseEnter={(e) => handleHoverBouncer(e)}
+                    onMouseOut={(e) => handleHoverBouncerExit(e)}
+                    ref={(el) => (line1 = el)}
+                    to="/opportunities"
+                  >
                     Opportunities
                   </Link>
                 </li>
                 <li>
-                  <Link ref={(el) => (line2 = el)} to="/solutions">
+                  <Link
+                    onMouseEnter={(e) => handleHoverBouncer(e)}
+                    onMouseOut={(e) => handleHoverBouncerExit(e)}
+                    ref={(el) => (line2 = el)}
+                    to="/solutions"
+                  >
                     Solutions
                   </Link>
                 </li>
                 <li>
-                  <Link ref={(el) => (line3 = el)} to="/contact-us">
+                  <Link
+                    onMouseEnter={(e) => handleHoverBouncer(e)}
+                    onMouseOut={(e) => handleHoverBouncerExit(e)}
+                    ref={(el) => (line3 = el)}
+                    to="/contact-us"
+                  >
                     Contact us
                   </Link>
                 </li>
@@ -176,5 +216,3 @@ const Hamburger = ({ state }) => {
 };
 
 export default Hamburger;
-
-

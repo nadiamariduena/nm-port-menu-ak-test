@@ -902,4 +902,4 @@ export default withRouter(Header);
 
 []()
 
-[ <img src="./src/images/menu-working-but-without-dropdown-effect.gif"/>]()
+[ <img src="../../src/images/menu-working-but-without-dropdown-effect.gif"/>]()
