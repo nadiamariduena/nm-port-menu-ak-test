@@ -16,7 +16,7 @@ cd MYPERSO-MEYOKO
 #### You will have something like this
 
 ```javascript
-/Desktop/EMOPRSY - MEYOKO2020$;
+// Desktop/MYPERSO-MEYOKO2020$ 
 ```
 
 #### Once you got that, type this:
